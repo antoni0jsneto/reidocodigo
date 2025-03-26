@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.background {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("images/programador.png") no-repeat center center/cover;
+}
+
+/* INICIO HEADER */
+.header {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.header.scrolled {
+  position: fixed;
+  background-color: #181818;
+}
+
+.header .logo {
+  flex: 1;
+  align-self: center;
+  margin-left: 28px;
+}
+
+.header .logo img {
+  width: 110px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.9s;
+}
+
+.header .logo img:hover {
+  transform: scale(1.1);
+}
+
+.nav {
+  flex: 1;
+  align-self: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 28px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #ddd;
+  padding: 20px;
+}
+
+.nav-list a:hover {
+  color: #fbd753;
+}
+/* FIM HEADER */
+
+/* INICIO MAIN */
+.main {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.main h1 {
+  color: #ffffff;
+  font-size: 54px;
+}
+
+.main p {
+  font-size: 24px;
+  font-style: italic;
+  color: #fbd753;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.call-to-action {
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 0;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.9s;
+}
+
+.call-to-action:hover {
+  transform: scale(1.1);
+}
+
+.main a {
+  text-decoration: none;
+  color: #181818;
+}
+
+.cabecalho {
+  flex: 1;
+}
+
+.form {
+  flex: 1;
+  padding: 20px;
+}
+
+.form form {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 20px;
+  width: 600px;
+}
+
+.form form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form form div label {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.form form div input {
+  font-size: 16px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  color: #181818;
+}
+
+.form form div select {
+  font-size: 16px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  color: #181818;
+}
+
+.form form .radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.form form button {
+  cursor: pointer;
+  background-color: #fbd753;
+  border: 0;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.9s;
+}
+
+.form form button:hover {
+  transform: scale(0.9);
+}
+/* FIM MAIN */
+
+/* INICIO ABOUT */
+.about {
+  background-color: #ffffff;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about div {
+  max-width: 50%;
+  padding-right: 40px;
+}
+
+.about img {
+  max-width: 450px;
+  border-radius: 8px;
+}
+
+.about div h2 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+/* FIM ABOUT */
+
+/* INICIO PROJECTS */
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.projects h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.projects p {
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.project-list {
+  width: 100%;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects img {
+  width: 22%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  opacity: 0.8;
+  transition: 0.9s;
+}
+
+.projects img:hover {
+  opacity: 1;
+}
+
+.action {
+  background-color: #fbd753;
+  border: 0;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #181818;
+  font-weight: 600;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: 0.9s;
+}
+
+.action:hover {
+  transform: scale(1.1);
+}
+/* FIM PROJECTS */
+
+/* INICIO RODAPE */
+footer {
+  width: 100%;
+  background-color: #181818;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fbd753ff;
+}
+
+footer img {
+  width: 200px;
+}
+
+footer p {
+  margin-left: 12px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+/* FIM RODAPE */
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1050px) {
+  /* INICIO MAIN */
+  .header {
+    flex-direction: column;
+    height: 120px;
+  }
+
+  .header .logo {
+    margin: 10px 0 0 0;
+  }
+
+  .nav-list {
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .main h1 {
+    font-size: 45px;
+  }
+
+  .main p {
+    font-size: 18px;
+  }
+
+  .main {
+    background-size: cover;
+  }
+  /* FIM MAIN */
+
+  /* INICIO SOBRE */
+  .about {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .about div {
+    max-width: 80%;
+  }
+
+  .about div h2 {
+    font-size: 45px;
+  }
+
+  .about img {
+    width: 80%;
+    margin-top: 30px;
+  }
+  /* FIM SOBRE */
+
+  /* INICIO PROJETOS */
+  .projects img {
+    width: 27.5%;
+  }
+  /* FIM PROJETOS */
+
+  /* INICIO RODAPE */
+  footer {
+    flex-direction: column;
+  }
+
+  footer img {
+    width: 150px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 12px;
+  }
+  /* FIM RODAPE */
+}

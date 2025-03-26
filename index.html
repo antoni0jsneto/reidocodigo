@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Rei do Codigo - Meu portfolio</title>
+  </head>
+  <body id="home">
+    <div class="background">
+      <!-- INICIO HEADER -->
+      <header class="header">
+        <div class="logo">
+          <img src="images/logo-site-cortada.png" alt="Rei do Codigo" />
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#sobre">Sobre</a>
+            </li>
+            <li>
+              <a href="#projetos">Projetos</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- FIM HEADER -->
+
+      <!-- INICIO MAIN -->
+      <section class="main">
+        <div class="cabecalho">
+          <h1>Olá,<br />Seja bem vindo</h1>
+          <p>Crie soluções para seu negócio!</p>
+          <a href="#">
+            <button class="call-to-action">Veja meus projetos 👇</button>
+          </a>
+        </div>
+        <div class="form">
+          <form
+            id="contactForm"
+            action="https://formsubmit.co/pgneto6@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://seusite.com/obrigado.html"
+            />
+
+            <div>
+              <label for="name">Nome</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                autocomplete="new-name"
+                placeholder="Seu nome"
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                autocomplete="new-email"
+                placeholder="seuemail@gmail.com"
+              />
+            </div>
+            <div>
+              <label for="phone">Telefone</label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                required
+                autocomplete="new-phone"
+                placeholder="(00) 00000-0000"
+                maxlength="15"
+              />
+            </div>
+            <div>
+              <label for="search">O que está buscando?</label>
+              <select name="search" id="search">
+                <option value="sistema">Desenvolvimento de sistema</option>
+                <option value="aplicativo">
+                  Desenvolvimento de aplicativo
+                </option>
+                <option value="site">Desenvolvimento de site</option>
+                <option value="manutencao">
+                  Atualizações, ajustes ou manutenção para o meu projeto
+                </option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="radio">
+              <input type="checkbox" name="confirm" id="confirm" required />
+              <label for="confirm">
+                Confirmo que possuo mais de 18 anos e desejo receber um contato
+                comercial
+              </label>
+            </div>
+            <button type="submit" class="action">Solicitar contato</button>
+          </form>
+        </div>
+      </section>
+      <!-- FIM MAIN -->
+    </div>
+
+    <!-- INICIO SOBRE -->
+    <section id="sobre" class="about">
+      <div>
+        <h2>Sobre</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
+          corrupti vel quod enim cupiditate quam inventore. Sequi esse alias
+          facere ipsum consequatur accusantium asperiores, labore est soluta.
+          <br /><br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad distinctio
+          earum architecto corrupti aliquid, eius impedit obcaecati, nulla
+          maiores laboriosam reiciendis in voluptate tenetur mollitia
+          accusantium optio unde, quia numquam.
+        </p>
+      </div>
+      <img src="images/foto-pc.png" alt="Foto minha programando" />
+    </section>
+    <!-- FIM SOBRE -->
+
+    <!-- INICIO PROJETOS -->
+    <section id="projetos" class="projects">
+      <h2>Meus projetos</h2>
+      <p>Conheça meus últimos projetos</p>
+
+      <div class="project-list">
+        <img src="images/projeto1.png" alt="Foto do projeto 1" />
+        <img src="images/projeto2.png" alt="Foto do projeto 2" />
+        <img src="images/projeto3.png" alt="Foto do projeto 3" />
+      </div>
+
+      <div class="project-list">
+        <img src="images/projeto2.png" alt="Foto do projeto 2" />
+        <img src="images/projeto1.png" alt="Foto do projeto 1" />
+        <img src="images/projeto3.png" alt="Foto do projeto 3" />
+      </div>
+
+      <button class="action">✅ Faça um orçamento</button>
+    </section>
+    <!-- FIM PROJETOS -->
+
+    <!-- INICIO RODAPE -->
+    <footer>
+      <a href="#">
+        <img src="images/logo-escrita-cortada.png" alt="Rei do Codigo" />
+      </a>
+      <p>© Todos direitos reservados</p>
+    </footer>
+    <!-- FIM RODAPE -->
+    <script src="script.js"></script>
+  </body>
+</html>
