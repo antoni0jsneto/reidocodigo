@@ -322,7 +322,6 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.3s ease;
   animation: pulse 1.5s infinite;
@@ -395,11 +394,11 @@ footer p {
   }
 
   .main h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .main p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .main {
@@ -415,14 +414,24 @@ footer p {
   /* FIM MAIN */
 
   /* INICIO SOBRE */
+  .about {
+    padding: 20px;
+  }
+
   .about-content {
     flex-direction: column;
   }
 
   .about-content img {
-    width: 90%;
+    width: 100%;
   }
   /* FIM SOBRE */
+
+  /* INICIO SERVICES */
+  .services-section {
+    padding: 20px;
+  }
+  /* FIM SERVICES  */
 
   /* INICIO RODAPE */
   footer {
