@@ -22,11 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function getApiKey() {
-  const response = await fetch("http://localhost:5000/get-key", {
-    headers: {
-      Authorization: "Bearer CGLsuriatIwpf3w",
-    },
-  });
+  const response = await fetch(
+    "https://secure-api-production.up.railway.app/get-key",
+    {
+      headers: {
+        Authorization: "Bearer CGLsuriatIwpf3w",
+      },
+    }
+  );
 
   if (!response.ok) {
     // console.error("Erro ao obter chave:", await response.json());
