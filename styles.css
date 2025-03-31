@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,8 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", "Roboto", sans-serif;
+  font-optical-sizing: auto;
 }
 
 html {
@@ -79,7 +82,7 @@ html {
 /* INICIO MAIN */
 .main {
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -102,7 +105,7 @@ html {
   cursor: pointer;
   background-color: #ffffff;
   border: 0;
-  padding: 14px;
+  padding: 14px 30px;
   border-radius: 4px;
   font-size: 18px;
   font-weight: bold;
@@ -111,6 +114,7 @@ html {
 
 .call-to-action:hover {
   transform: scale(1.1);
+  background-color: #fbd753;
 }
 
 .main a {
@@ -120,11 +124,15 @@ html {
 
 .cabecalho {
   flex: 1;
+  font-family: "Manrope", "Roboto", sans-serif;
 }
 
 .form {
+  display: flex;
+  justify-content: center;
   flex: 1;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .form form {
@@ -303,11 +311,65 @@ footer p {
   margin-top: 5px;
   font-size: 13px;
 }
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+
+.whatsapp-button a img {
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.whatsapp-button:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s;
+}
 /* FIM RODAPE */
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 1050px) {
+@media (max-width: 1287px) {
   /* INICIO MAIN */
   .header {
     flex-direction: column;
@@ -323,6 +385,16 @@ footer p {
     margin: 10px 0;
   }
 
+  .form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form form {
+    width: 100%;
+    max-width: 600px;
+  }
+
   .main h1 {
     font-size: 45px;
   }
@@ -332,17 +404,24 @@ footer p {
   }
 
   .main {
+    flex-direction: column;
     background-size: cover;
+    padding: 10px;
   }
+
+  .cabecalho {
+    margin: 60px 0 90px 0;
+  }
+
   /* FIM MAIN */
 
   /* INICIO SOBRE */
   .about {
     flex-direction: column;
-    padding-top: 80px;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
+    padding-top: 30px;
   }
 
   .about div {
