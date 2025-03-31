@@ -1,1 +1,3 @@
 .vscode/
+secure-backend/.env
+node_modules

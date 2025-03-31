@@ -1,7 +1,7 @@
 window.addEventListener("scroll", function () {
   let header = document.querySelector(".header");
 
-  if (window.scrollY > window.innerHeight) {
+  if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
@@ -9,32 +9,95 @@ window.addEventListener("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
-  const phoneInput = document.getElementById("phone");
-
   // Aplicando máscara no telefone
-  phoneInput.addEventListener("input", function (event) {
-    let value = event.target.value.replace(/\D/g, ""); // Remove tudo que não for número
-
+  document.getElementById("phone").addEventListener("input", function (event) {
+    let value = event.target.value.replace(/\D/g, "");
     if (value.length <= 10) {
       value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
     } else {
       value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3");
     }
-
     event.target.value = value;
   });
+});
 
-  // Submeter o formulário
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita o envio tradicional
-
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log("Dados enviados:", data);
-
-    alert("Formulário enviado com sucesso!");
-    form.reset(); // Limpa os campos após o envio
+async function getApiKey() {
+  const response = await fetch("http://localhost:5000/get-key", {
+    headers: {
+      Authorization: "Bearer CGLsuriatIwpf3w",
+    },
   });
+
+  if (!response.ok) {
+    // console.error("Erro ao obter chave:", await response.json());
+    return null;
+  }
+
+  const data = await response.json();
+  return data.apiKey;
+}
+
+getApiKey().then((apiKey) => {
+  //   if (apiKey) {
+  //     // console.log("Chave recebida:", apiKey);
+  //   }
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.init(apiKey);
+
+      emailjs
+        .send("service_i640gka", "template_puaoag7", {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          search: document.getElementById("search").value,
+          confirm: document.getElementById("confirm").checked ? "Sim" : "Não",
+        })
+        .then(
+          function (response) {
+            document.getElementById("contactForm").reset();
+            // console.log("Resposta da API:", response);
+            alert("E-mail enviado com sucesso!");
+          },
+          function (error) {
+            // console.error("Erro no envio:", error);
+            alert("Erro ao enviar e-mail. Tente novamente mais tarde.");
+          }
+        );
+    });
+});
+
+// whatsapp button
+const whatsappButton = document.getElementById("whatsapp-button");
+const tooltip = document.getElementById("whatsapp-tooltip");
+let tooltipTimeout;
+
+function showTooltip() {
+  tooltip.style.opacity = "1";
+  tooltip.style.transform = "translateY(0)";
+}
+
+function hideTooltip() {
+  tooltip.style.opacity = "0";
+  tooltip.style.transform = "translateY(10px)";
+}
+
+setTimeout(showTooltip, 1000);
+
+tooltipTimeout = setTimeout(hideTooltip, 30000);
+
+whatsappButton.addEventListener("mouseover", () => {
+  clearTimeout(tooltipTimeout);
+  showTooltip();
+});
+
+whatsappButton.addEventListener("mouseleave", () => {
+  tooltipTimeout = setTimeout(hideTooltip, 500);
+});
+
+whatsappButton.addEventListener("click", () => {
+  hideTooltip();
 });
