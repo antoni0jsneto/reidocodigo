@@ -56,7 +56,7 @@
   <body id="home">
     <div class="background">
       <!-- INICIO HEADER -->
-      <header class="header">
+      <header id="header" class="header">
         <div class="logo">
           <a href="#" alt="Rei do Codigo">
             <img
@@ -66,18 +66,15 @@
           </a>
         </div>
         <nav class="nav">
-          <ul class="nav-list">
+          <ul id="nav-list" class="nav-list">
             <li>
               <a href="#home">Home</a>
             </li>
             <li>
-              <a href="#about">Sobre</a>
+              <a href="#action-button">Sobre</a>
             </li>
             <li>
-              <a href="#services">Serviços</a>
-            </li>
-            <li>
-              <a href="#projets">Projetos</a>
+              <a href="#about-subcontent">Serviços</a>
             </li>
           </ul>
         </nav>
@@ -133,7 +130,9 @@
                 comercial
               </label>
             </div>
-            <button type="submit" class="action">Solicitar contato</button>
+            <button id="action-button" type="submit" class="action">
+              Solicitar contato
+            </button>
           </form>
         </div>
       </section>
@@ -153,7 +152,7 @@
             personalizadas para cada necessidade.
           </p>
         </div>
-        <div class="about-subcontent">
+        <div id="about-subcontent" class="about-subcontent">
           <img src="/images/about-image.png" alt="Nossa empresa" />
         </div>
       </div>
