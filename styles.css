@@ -313,11 +313,11 @@ footer p {
 
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #25d366;
+  background-color: transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -328,8 +328,8 @@ footer p {
 }
 
 .whatsapp-button a img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
 }
 
 @keyframes pulse {
