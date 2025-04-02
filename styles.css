@@ -198,9 +198,11 @@ html {
 
 /* INICIO ABOUT */
 .about {
-  padding: 80px;
+  scroll-margin-top: 80px;
+  padding: 80px 80px 0 80px;
   text-align: center;
   background-color: #f8f9fa;
+  height: 100vh;
 }
 
 .about h2 {
@@ -211,10 +213,12 @@ html {
 .about-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 40px;
   max-width: 1000px;
   margin: auto;
+  flex: 1;
+  height: 50%;
 }
 
 .about-subcontent {
@@ -236,24 +240,59 @@ html {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.stats-container {
+  flex: 1;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30%;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.stat-box img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+}
 /* FIM ABOUT */
 
 /* INICIO SERVICES */
 .services-section {
+  scroll-margin-top: 80px;
   padding: 80px;
   text-align: center;
   background-color: #fff;
+  height: 100vh;
 }
 
 .services-section h2 {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .services-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 60px;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: auto;
@@ -416,6 +455,7 @@ footer p {
   /* INICIO SOBRE */
   .about {
     padding: 80px 20px;
+    height: auto;
   }
 
   .about-content {
@@ -430,6 +470,7 @@ footer p {
   /* INICIO SERVICES */
   .services-section {
     padding: 80px 20px;
+    height: auto;
   }
   /* FIM SERVICES  */
 
