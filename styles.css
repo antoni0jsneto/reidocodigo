@@ -465,12 +465,20 @@ footer p {
   .about-content img {
     width: 100%;
   }
+
+  .stats-container {
+    margin-top: 60px;
+  }
   /* FIM SOBRE */
 
   /* INICIO SERVICES */
   .services-section {
-    padding: 80px 20px;
+    padding: 60px 20px 80px 20px;
     height: auto;
+  }
+
+  .services-section h2 {
+    margin-bottom: 50px;
   }
   /* FIM SERVICES  */
 
