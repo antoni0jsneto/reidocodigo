@@ -506,5 +506,10 @@ footer p {
     margin: 0;
     font-size: 12px;
   }
+
+  .whatsapp-button a img {
+    width: 60px;
+    height: 60px;
+  }
   /* FIM RODAPE */
 }
