@@ -36,6 +36,7 @@ footer {
 body {
   font-family: Montserrat, Roboto, sans-serif;
   font-optical-sizing: auto;
+  font-display: swap;
 }
 html {
   scroll-behavior: smooth;
@@ -343,6 +344,10 @@ footer p {
   .main {
     flex-direction: column;
   }
+  .main h1,
+  .main p {
+    text-align: center;
+  }
   .about-content img,
   .form,
   .form form {
@@ -365,10 +370,10 @@ footer p {
     max-width: 600px;
   }
   .main h1 {
-    font-size: 35px;
+    font-size: 25px;
   }
   .main p {
-    font-size: 16px;
+    font-size: 15px;
   }
   .main {
     background-size: cover;
