@@ -10,6 +10,7 @@
 body {
   font-family: "Montserrat", "Roboto", sans-serif;
   font-optical-sizing: auto;
+  font-display: swap;
 }
 
 html {
@@ -18,7 +19,7 @@ html {
 
 .background {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("images/programador.webp") no-repeat center center/cover;
+    url("/assets/images/programador.webp") no-repeat center center/cover;
 }
 
 /* INICIO HEADER */
