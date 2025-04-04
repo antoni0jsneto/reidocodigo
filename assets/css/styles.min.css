@@ -104,6 +104,7 @@ footer img {
 .main h1 {
   color: #fff;
   font-size: 54px;
+  text-align: start;
 }
 .main p {
   font-size: 24px;

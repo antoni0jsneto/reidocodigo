@@ -73,38 +73,6 @@ getApiKey().then((apiKey) => {
     });
 });
 
-// whatsapp button
-const whatsappButton = document.getElementById("whatsapp-button");
-const tooltip = document.getElementById("whatsapp-tooltip");
-let tooltipTimeout;
-
-function showTooltip() {
-  tooltip.style.opacity = "1";
-  tooltip.style.transform = "translateY(0)";
-}
-
-function hideTooltip() {
-  tooltip.style.opacity = "0";
-  tooltip.style.transform = "translateY(10px)";
-}
-
-setTimeout(showTooltip, 1000);
-
-tooltipTimeout = setTimeout(hideTooltip, 30000);
-
-whatsappButton.addEventListener("mouseover", () => {
-  clearTimeout(tooltipTimeout);
-  showTooltip();
-});
-
-whatsappButton.addEventListener("mouseleave", () => {
-  tooltipTimeout = setTimeout(hideTooltip, 500);
-});
-
-whatsappButton.addEventListener("click", () => {
-  hideTooltip();
-});
-
 // adicionar rolagem suave sem mostrar o site rolando
 document.querySelectorAll("nav a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -115,5 +83,78 @@ document.querySelectorAll("nav a").forEach((anchor) => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  });
+});
+
+// carregando o botão do whatsapp apenas após o carregamento da página
+window.addEventListener("load", function () {
+  // Tooltip
+  const tooltip = document.createElement("div");
+  tooltip.id = "whatsapp-tooltip";
+  tooltip.className = "whatsapp-tooltip";
+  tooltip.innerText = "Fale conosco no WhatsApp!";
+  tooltip.style.opacity = "0"; // Começa invisível
+  document.body.appendChild(tooltip);
+
+  // Botão
+  const button = document.createElement("div");
+  button.id = "whatsapp-button";
+  button.className = "whatsapp-button";
+
+  const link = document.createElement("a");
+  link.href = "https://w.app/reidocodigo";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  const img = document.createElement("img");
+  img.src = "/assets/images/whatsapp.webp"; // Caminho da sua imagem
+  img.alt = "Entre em contato conosco";
+  img.style.width = "80px";
+  img.style.height = "80px";
+
+  link.appendChild(img);
+  button.appendChild(link);
+  document.body.appendChild(button);
+
+  // Lógica do tooltip
+  button.addEventListener("mouseenter", function () {
+    tooltip.style.opacity = "1";
+    tooltip.style.transform = "translateY(0)";
+  });
+
+  button.addEventListener("mouseleave", function () {
+    tooltip.style.opacity = "0";
+    tooltip.style.transform = "translateY(10px)";
+  });
+
+  // whatsapp button
+  const whatsappButton = document.getElementById("whatsapp-button");
+  let tooltipTimeout;
+
+  function showTooltip() {
+    tooltip.style.opacity = "1";
+    tooltip.style.transform = "translateY(0)";
+  }
+
+  function hideTooltip() {
+    tooltip.style.opacity = "0";
+    tooltip.style.transform = "translateY(10px)";
+  }
+
+  setTimeout(showTooltip, 1000);
+
+  tooltipTimeout = setTimeout(hideTooltip, 30000);
+
+  whatsappButton.addEventListener("mouseover", () => {
+    clearTimeout(tooltipTimeout);
+    showTooltip();
+  });
+
+  whatsappButton.addEventListener("mouseleave", () => {
+    tooltipTimeout = setTimeout(hideTooltip, 500);
+  });
+
+  whatsappButton.addEventListener("click", () => {
+    hideTooltip();
   });
 });

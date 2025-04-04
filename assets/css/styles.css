@@ -90,6 +90,7 @@ html {
 .main h1 {
   color: #ffffff;
   font-size: 54px;
+  text-align: start;
 }
 
 .main p {
