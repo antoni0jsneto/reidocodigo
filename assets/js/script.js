@@ -162,11 +162,11 @@ window.addEventListener("load", function () {
 
   if (bgElement && window.innerWidth > 1200) {
     const image = new Image();
-    image.src = "/assets/images/programador.webp";
+    image.src = "/assets/images/background.webp";
 
     image.onload = function () {
       bgElement.style.backgroundImage = `
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
       url('${image.src}')
     `;
     };
