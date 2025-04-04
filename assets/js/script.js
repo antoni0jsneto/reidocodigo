@@ -93,7 +93,7 @@ window.addEventListener("load", function () {
   tooltip.id = "whatsapp-tooltip";
   tooltip.className = "whatsapp-tooltip";
   tooltip.innerText = "Fale conosco no WhatsApp!";
-  tooltip.style.opacity = "0"; // Começa invisível
+  tooltip.style.opacity = "0";
   document.body.appendChild(tooltip);
 
   // Botão
@@ -107,7 +107,7 @@ window.addEventListener("load", function () {
   link.rel = "noopener noreferrer";
 
   const img = document.createElement("img");
-  img.src = "/assets/images/whatsapp.webp"; // Caminho da sua imagem
+  img.src = "/assets/images/whatsapp.webp";
   img.alt = "Entre em contato conosco";
   img.style.width = "80px";
   img.style.height = "80px";
@@ -157,4 +157,17 @@ window.addEventListener("load", function () {
   whatsappButton.addEventListener("click", () => {
     hideTooltip();
   });
+
+  const bgElement = document.querySelector(".background");
+  if (bgElement) {
+    const image = new Image();
+    image.src = "/assets/images/programador.webp";
+
+    image.onload = function () {
+      bgElement.style.backgroundImage = `
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+          url('${image.src}')
+        `;
+    };
+  }
 });
