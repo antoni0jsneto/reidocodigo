@@ -159,15 +159,16 @@ window.addEventListener("load", function () {
   });
 
   const bgElement = document.querySelector(".background");
-  if (bgElement) {
+
+  if (bgElement && window.innerWidth > 1200) {
     const image = new Image();
     image.src = "/assets/images/programador.webp";
 
     image.onload = function () {
       bgElement.style.backgroundImage = `
-          linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-          url('${image.src}')
-        `;
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+      url('${image.src}')
+    `;
     };
   }
 });
