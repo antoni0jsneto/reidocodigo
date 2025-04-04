@@ -86,15 +86,31 @@ document.querySelectorAll("nav a").forEach((anchor) => {
   });
 });
 
-// carregando o botão do whatsapp apenas após o carregamento da página
+// carregando o background apenas depois do carregamento da página
 window.addEventListener("load", function () {
+  const bgElement = document.querySelector(".background");
+
+  if (bgElement && window.innerWidth > 1200) {
+    const image = new Image();
+    image.src = "/assets/images/background.webp";
+
+    image.onload = function () {
+      bgElement.style.backgroundImage = `
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+      url('${image.src}')
+    `;
+    };
+  }
+});
+
+// carregando o botão do whatsapp apenas após o carregamento da página
+window.addEventListener("DOMContentLoaded", function () {
   // Tooltip
   const tooltip = document.createElement("div");
   tooltip.id = "whatsapp-tooltip";
   tooltip.className = "whatsapp-tooltip";
   tooltip.innerText = "Fale conosco no WhatsApp!";
   tooltip.style.opacity = "0";
-  document.body.appendChild(tooltip);
 
   // Botão
   const button = document.createElement("div");
@@ -112,20 +128,23 @@ window.addEventListener("load", function () {
   img.style.width = "80px";
   img.style.height = "80px";
 
-  link.appendChild(img);
-  button.appendChild(link);
-  document.body.appendChild(button);
+  setTimeout(() => {
+    document.body.appendChild(tooltip);
+    link.appendChild(img);
+    button.appendChild(link);
+    document.body.appendChild(button);
 
-  // Lógica do tooltip
-  button.addEventListener("mouseenter", function () {
-    tooltip.style.opacity = "1";
-    tooltip.style.transform = "translateY(0)";
-  });
+    // Lógica do tooltip
+    button.addEventListener("mouseenter", function () {
+      tooltip.style.opacity = "1";
+      tooltip.style.transform = "translateY(0)";
+    });
 
-  button.addEventListener("mouseleave", function () {
-    tooltip.style.opacity = "0";
-    tooltip.style.transform = "translateY(10px)";
-  });
+    button.addEventListener("mouseleave", function () {
+      tooltip.style.opacity = "0";
+      tooltip.style.transform = "translateY(10px)";
+    });
+  }, 6000);
 
   // whatsapp button
   const whatsappButton = document.getElementById("whatsapp-button");
@@ -144,31 +163,4 @@ window.addEventListener("load", function () {
   setTimeout(showTooltip, 1000);
 
   tooltipTimeout = setTimeout(hideTooltip, 30000);
-
-  whatsappButton.addEventListener("mouseover", () => {
-    clearTimeout(tooltipTimeout);
-    showTooltip();
-  });
-
-  whatsappButton.addEventListener("mouseleave", () => {
-    tooltipTimeout = setTimeout(hideTooltip, 500);
-  });
-
-  whatsappButton.addEventListener("click", () => {
-    hideTooltip();
-  });
-
-  const bgElement = document.querySelector(".background");
-
-  if (bgElement && window.innerWidth > 1200) {
-    const image = new Image();
-    image.src = "/assets/images/background.webp";
-
-    image.onload = function () {
-      bgElement.style.backgroundImage = `
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-      url('${image.src}')
-    `;
-    };
-  }
 });
